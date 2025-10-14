@@ -6,6 +6,11 @@ const Hotel = require("./model/hotel.model");
 app.use(express.json());
 initializeDatabase();
 
+const cors = require("cors");
+
+app.use(cors());
+app.use(express.json());
+
 // const newHotel = {
 //   name: "Sunset Resort",
 //   category: "Resort",
