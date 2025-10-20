@@ -9,29 +9,14 @@ initializeDatabase();
 
 const cors = require("cors");
 
-app.use(cors());
+const corsOptions = {
+    origin: "*",
+    credentials: true
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
-// const newHotel = {
-//   name: "Sunset Resort",
-//   category: "Resort",
-//   location: "12 Main Road, Anytown",
-//   rating: 4.0,
-//   reviews: [],
-//   website: "https://sunset-example.com",
-//   phoneNumber: "+1299655890",
-//   checkInTime: "2:00 PM",
-//   checkOutTime: "11:00 AM",
-//   amenities: ["Room Service", "Horse riding", "Boating", "Kids Play Area", "Bar"],
-//   priceRange: "$$$$ (61+)",
-//   reservationsNeeded: true,
-//   isParkingAvailable: true,
-//   isWifiAvailable: true,
-//   isPoolAvailable: true,
-//   isSpaAvailable: true,
-//   isRestaurantAvailable: true,
-//   photos: ["https://example.com/hotel2-photo1.jpg", "https://example.com/hotel2-photo2.jpg"],
-// };
 
 async function createData(newHotel){
     try{
