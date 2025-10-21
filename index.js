@@ -267,7 +267,7 @@ async function deleteHotel(hotelId){
     }
 }
 
-app.delete("/hotel/:hotelId", async(req, res) => {
+app.delete("/hotels/:hotelId", async(req, res) => {
     try{
         const deHotel = await deleteHotel(req.params.hotelId);
         if(deHotel){
